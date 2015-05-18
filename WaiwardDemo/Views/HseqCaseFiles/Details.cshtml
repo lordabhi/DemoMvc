@@ -1,0 +1,41 @@
+﻿@model WaiwardDemo.Models.HseqCaseFile
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>HseqCaseFile</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CaseNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CaseNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NcrID)
+        </dt>
+
+        <dd>
+            @if (Model.NcrID == null)
+            {
+                @Html.DisplayFor(model => model.NcrID)
+            }
+            else
+            {
+                @Html.ActionLink(Model.NcrID + "", "Details", "Ncrs", new { id = Model.NcrID }, null)
+            }
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.HseqCaseFileID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

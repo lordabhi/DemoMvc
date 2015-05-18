@@ -1,0 +1,41 @@
+﻿@{
+    ViewBag.Title = "Waiward";
+}
+
+    <h2>Welcome to HSEQ Central</h2>
+
+<div class="row">
+
+    <br /><br /><br />
+
+    @Html.ActionLink("Report a non-conformance", "Create", "Ncrs")
+
+    <br /><br /><br />
+    @Html.ActionLink("View Existing non-conformance Records", "Index", "Ncrs")
+
+    <br /><br /><br />
+    @Html.ActionLink("View Existing Case Files", "Index", "HseqCaseFiles")
+
+    <br /><br /><br />
+
+    @*@*<br /><br /><br />
+    <a href="/NCRs/create">Report a non-conformance</a>
+
+    <br /><br /><br />
+
+    <a href="/NCRs/index">View Existing non-conformance Records</a>
+    <br /><br /><br />
+
+    <a href="/hseqCaseFiles/index">View Existing Case Files</a>
+    <br /><br /><br /><br />*@
+
+    <h3> Configurations </h3>
+    <br />
+
+    @*<a href="/DiscrepancyTypes/index">Discrepancy Type</a>*@
+    
+
+    @Html.ActionLink("Discrepancy Type", "Index", "DiscrepancyTypes")
+    <br /><br /><br />
+
+    </div>

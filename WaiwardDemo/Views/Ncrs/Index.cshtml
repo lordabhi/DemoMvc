@@ -1,0 +1,105 @@
+﻿@model IEnumerable<WaiwardDemo.Models.Ncr>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.HseqCaseFile.CaseNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RecordType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NcrState)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.NcrSource)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.DiscrepancyType.Name)
+        </th>
+        
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+
+        @*<th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+ 
+        <th>
+            @Html.DisplayNameFor(model => model.EnteredBy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReportedBy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.QualityCoordinator)
+        </th>*@
+
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @*@Html.DisplayFor(modelItem => item.HseqCaseFile.CaseNo)*@
+            @Html.ActionLink(item.HseqCaseFile.CaseNo + "", "Details", "HseqCaseFiles", new { id = item.HseqCaseFile.HseqCaseFileID }, null)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RecordType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NcrState)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NcrSource)
+        </td>
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.DiscrepancyType.Name)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.Status)
+        </td>
+         
+        @*<td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.EnteredBy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReportedBy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.QualityCoordinator)
+        </td>*@
+
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.NcrID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.NcrID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.NcrID })
+        </td>
+    </tr>
+}
+
+</table>
